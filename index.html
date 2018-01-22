@@ -42,11 +42,12 @@
 const divs = document.querySelector('div');
 
 function logText(e){
-
+  console.log(this.classList.value);
+  e.stopPropagation();
 }
 
-divs.forEach(div => div.addEventListender('click'), logText);
-
+divs.forEach(div => div.addEventListender('click'), logText, { capture: true});
+console.log("test");
 
 </script>
 </body>
